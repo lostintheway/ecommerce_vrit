@@ -11,6 +11,7 @@
 !.yarn/versions
 bun.lockb
 tests-examples
+sushil*
 
 # testing
 /coverage

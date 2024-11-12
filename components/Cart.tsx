@@ -8,6 +8,7 @@ type Props = {
   handleCloseCart: () => void;
 };
 
+// Cart Component
 const Cart = ({ cartDetails, handleUpdate, handleCloseCart }: Props) => {
   return (
     <div className="cart-container">

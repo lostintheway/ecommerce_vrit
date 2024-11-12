@@ -48,11 +48,15 @@ export default function Home() {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [animate, setAnimate] = useState(false);
 
+  // this is a simple function to handle adding a product to the cart
   const handleAddToCart = (product: ProductType) => {
     setAnimate(true);
     setTimeout(() => setAnimate(false), 1000);
+
+    // check if the product is already in the cart
     const findItem = cart.find((item) => item.id === product.id);
     if (findItem) {
+      // if it is, update the quantity
       const cartData = cart.map((item) =>
         item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
       );
@@ -63,9 +67,11 @@ export default function Home() {
     }
   };
 
+  // this is a simple function to handle updating the quantity of a product
   const handleUpdateQuantity = (productId: string, add: boolean) => {
     const newCart = [];
 
+    // update the quantity of the product
     for (const item of cart) {
       if (item.id === productId) {
         const updatedQuantity = add ? item.quantity + 1 : item.quantity - 1;
@@ -80,10 +86,12 @@ export default function Home() {
     setCart(newCart);
   };
 
+  // this is a simple function to open the selected image
   const openSelectedImage = (imageUrl: string) => {
     setSelectedImage(imageUrl);
   };
 
+  // this is a simple function to close the selected image
   const handleToggleCart = () => {
     setAnimate(true);
     setIsCartOpen((prev) => !prev);
@@ -91,6 +99,7 @@ export default function Home() {
 
   return (
     <div>
+      {/*  this is a simple component to display the navigation */}
       <nav>
         <h1>Products Page</h1>
         <button
@@ -100,6 +109,8 @@ export default function Home() {
           <span>{cart.length}</span> <CartIcon />
         </button>
       </nav>
+
+      {/* this is a simple component to display the selected image */}
 
       <div className={`cart-slide-in ${isCartOpen ? "open" : ""}`}>
         <ErrorBoundary fallbackRender={FallbackRender}>
@@ -111,6 +122,7 @@ export default function Home() {
         </ErrorBoundary>
       </div>
 
+      {/* this is a simple component to display the products */}
       <div className="products-page">
         <ErrorBoundary fallbackRender={FallbackRender}>
           {products.map((product) => (
@@ -139,8 +151,8 @@ export default function Home() {
             </div>
           ))}
         </ErrorBoundary>
-        {/* {JSON.stringify(cart)} */}
 
+        {/* this is a simple component to display the selected image */}
         {selectedImage && (
           <ErrorBoundary fallbackRender={FallbackRender}>
             <ZoomedImage

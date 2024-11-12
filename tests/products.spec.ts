@@ -2,6 +2,7 @@ import { test, expect } from "@playwright/test";
 
 const BASE_URL = "http://localhost:3000";
 
+//
 test("should display products with name and price", async ({ page }) => {
   await page.goto(BASE_URL);
 
@@ -24,19 +25,4 @@ test("should add a product to the cart", async ({ page }) => {
   await expect(cartButton).toHaveText("1");
 });
 
-// test('get started link', async ({ page }) => {
-//   await page.goto('https://playwright.dev/');
-
-//   // Click the get started link.
-//   await page.getByRole('link', { name: 'Get started' }).click();
-
-//   // Expects page to have a heading with the name of Installation.
-//   await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
-// });
-
-// test('has title', async ({ page }) => {
-//   await page.goto('https://playwright.dev/');
-
-//   // Expect a title "to contain" a substring.
-//   await expect(page).toHaveTitle(/Playwright/);
-// });
+// .. more tests like update quantity in the cart, Remove Item from Cart, needed not enough time
