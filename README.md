@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# My E-commerce Website
 
-## Getting Started
+This is a simple e-commerce website built with Next.js, TypeScript, and React. The application includes product listings, a shopping cart, and functionality to add and remove items from the cart.
 
-First, run the development server:
+## Setup Instructions
 
-```bash
+Before you begin, install following:
+
+- Node.js (>=v14.0.0)
+- npm/yarn/pnpm (package manager)
+
+step 1:
+npm install
+
+# or
+
+yarn install
+
+# or
+
+pnpm install
+
+# or
+
+bun install
+
+step 2:
+
 npm run dev
+
 # or
+
 yarn dev
+
 # or
+
 pnpm dev
+
 # or
+
 bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+###
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Technology Choices and Rationale
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Next.js
+   We chose Next.js as the framework for this project because it offers:
+   Server-Side Rendering (SSR) and Static Site Generation (SSG) capabilities out of the box, making it ideal for SEO and fast page loads.
+   API Routes, which allow us to build a full-stack application with a single framework, making it easy to handle server-side logic like managing the shopping cart or interacting with external APIs.
+   File-based routing for simple page navigation and dynamic route generation, which reduces boilerplate code.
 
-## Learn More
+2. React
+   We are using React as the UI library because it:
+   Supports component-based architecture, allowing us to build reusable and maintainable components (like the product listing, cart, and buttons).
+   Has a large ecosystem of tools, libraries, and community support.
+   Allows declarative rendering, simplifying state management and the UI logic.
 
-To learn more about Next.js, take a look at the following resources:
+3. TypeScript
+   TypeScript provides static typing for the JavaScript code, which:
+   Improves code quality by catching errors during development.
+   Provides better IDE support, making it easier to refactor and navigate the codebase.
+   Helps with long-term maintainability, especially in larger projects.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. CSS Modules
+   For styling, we use either:
+   CSS Modules, which provide scoped CSS for each component, reducing the chances of style conflicts.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+5. Playwright
+   We use Playwright for testing the application to ensure it behaves correctly and offers a good user experience.
+   Automate browser interactions for end-to-end testing.
+   Test the app on multiple browsers (Chromium, Firefox, WebKit).
+   Simulate real user interactions
